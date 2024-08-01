@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>家計簿アプリ</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>家計簿アプリ</title>
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.5.10/dist/vuetify.min.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-main>
+        <v-container>
+          <h1>家計簿</h1>
+          <v-text-field v-model="newTransaction.type" label="種類"></v-text-field>
+          <v-text-field v-model="newTransaction.amount" label="金額"></v-text-field>
+          <v-text-field v-model="newTransaction.category" label="カテゴリ"></v-text-field>
+          <v-btn @click="addTransaction">追加</v-btn>
+          <v-list>
+            <v-list-item v-for="transaction in transactions" :key="transaction.transactionID">
+              {{ transaction.type }}: {{ transaction.amount }} - {{ transaction.category }}
+            </v-list-item>
+          </v-list>
+        </v-container>
+      </v-main>
+    </v-app>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.5.10/dist/vuetify.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
